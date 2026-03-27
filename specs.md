@@ -63,7 +63,7 @@
 ## Fases
 1. ⬜ Skelet - Opzetten React Native Project 🟢 
 2. ⬜ Toevoegen navigatie + header inclusief (Zie schermen uitleg) + dashboard page (leeg) en receipts page (leeg). 🟢 
-
+3. Camera 
 
 -- Nog te wijzigen:
 3. ⬜ Skelet — lege schermen + navigatie werkend

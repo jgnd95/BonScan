@@ -1,12 +1,45 @@
-import { StyleSheet, View, TouchableOpacity, Text } from 'react-native';
+import { StyleSheet, View, TouchableOpacity, Text, Alert } from 'react-native';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import { Ionicons, MaterialCommunityIcons } from '@expo/vector-icons';
+import * as ImagePicker from 'expo-image-picker';
 
 import DashboardScreen from '../screens/DashboardScreen';
 import ScanScreen from '../screens/ScanScreen';
 import BonnetjesScreen from '../screens/BonnetjesScreen';
 
 const Tab = createBottomTabNavigator();
+
+async function openCamera(navigation) {
+  const { status } = await ImagePicker.requestCameraPermissionsAsync();
+  if (status !== 'granted') {
+    Alert.alert('Geen toegang', 'Camera-toegang is nodig om bonnetjes te scannen.');
+    return;
+  }
+  const result = await ImagePicker.launchCameraAsync({ quality: 0.8 });
+  if (!result.canceled) {
+    navigation.navigate('Scan', { imageUri: result.assets[0].uri });
+  }
+}
+
+async function openGallery(navigation) {
+  const { status } = await ImagePicker.requestMediaLibraryPermissionsAsync();
+  if (status !== 'granted') {
+    Alert.alert('Geen toegang', 'Galerij-toegang is nodig om een foto te kiezen.');
+    return;
+  }
+  const result = await ImagePicker.launchImageLibraryAsync({ quality: 0.8 });
+  if (!result.canceled) {
+    navigation.navigate('Scan', { imageUri: result.assets[0].uri });
+  }
+}
+
+function handleScanPress(navigation) {
+  Alert.alert('Bonnetje scannen', 'Hoe wil je het bonnetje toevoegen?', [
+    { text: 'Camera', onPress: () => openCamera(navigation) },
+    { text: 'Galerij', onPress: () => openGallery(navigation) },
+    { text: 'Annuleer', style: 'cancel' },
+  ]);
+}
 
 function CustomTabBar({ state, descriptors, navigation }) {
   return (
@@ -28,11 +61,15 @@ function CustomTabBar({ state, descriptors, navigation }) {
 
         if (isScan) {
           return (
-            <TouchableOpacity key={route.key} onPress={onPress} style={styles.scanButtonWrapper}>
+            <TouchableOpacity
+              key={route.key}
+              onPress={() => handleScanPress(navigation)}
+              style={styles.scanButtonWrapper}
+            >
               <View style={styles.scanButton}>
                 <Ionicons name="camera" size={28} color="#fff" />
               </View>
-              <Text style={[styles.label, { color: isFocused ? '#4A7CF7' : '#999' }]}>Scan</Text>
+              <Text style={[styles.label, { color: '#999' }]}>Scan</Text>
             </TouchableOpacity>
           );
         }
