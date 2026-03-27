@@ -5,7 +5,7 @@
 
 ---
 
-## Schermen & Flow
+## Schermen
 
 ### 1. Header
 - Links logo + naam, rechts settings button 
@@ -62,15 +62,15 @@
 
 ## Fases
 1. ⬜ Skelet - Opzetten React Native Project
-2. ⬜ Toevoegen navigatie + header inclusief dashboard page (leeg) en receipts page (leeg).
+2. ⬜ Toevoegen navigatie + header inclusief (Zie schermen uitleg) + dashboard page (leeg) en receipts page (leeg).
 
 -- Nog te wijzigen:
-1. ⬜ Skelet — lege schermen + navigatie werkend
-2. ⬜ Auth — login / register
-3. ⬜ Supabase setup — tabellen + RLS + storage
-4. ⬜ Scan + Bewerk — foto uploaden + handmatig opslaan
-5. ⬜ Overzicht + Detail — lijst en detail tonen
-6. ⬜ OCR integratie — Claude Haiku 4.5
+3. ⬜ Skelet — lege schermen + navigatie werkend
+4. ⬜ Auth — login / register
+5. ⬜ Supabase setup — tabellen + RLS + storage
+6. ⬜ Scan + Bewerk — foto uploaden + handmatig opslaan
+7. ⬜ Overzicht + Detail — lijst en detail tonen
+8. ⬜ OCR integratie — Claude Haiku 4.5
 
 ---
 
