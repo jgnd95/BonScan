@@ -1,6 +1,6 @@
 import { StyleSheet, View, Text } from 'react-native';
 
-export default function ReceiptsScreen() {
+export default function BonnetjesScreen() {
   return (
     <View style={styles.container}>
       <Text style={styles.text}>Bonnetjes</Text>

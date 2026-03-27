@@ -9,7 +9,7 @@ import { SafeAreaProvider } from 'react-native-safe-area-context';
 
 // Importeert de Header component (logo + settings knop bovenaan).
 import Header from './components/Header';
-// Importeert de TabNavigator met de bottom tabs (Dashboard, Scan, Receipts).
+// Importeert de TabNavigator met de bottom tabs (Dashboard, Scan, Bonnetjes).
 import TabNavigator from './navigation/TabNavigator';
 
 // Hoofdfunctie van de app, dit is het startpunt dat alles rendert.

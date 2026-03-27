@@ -4,7 +4,7 @@ import { Ionicons, MaterialCommunityIcons } from '@expo/vector-icons';
 
 import DashboardScreen from '../screens/DashboardScreen';
 import ScanScreen from '../screens/ScanScreen';
-import ReceiptsScreen from '../screens/ReceiptsScreen';
+import BonnetjesScreen from '../screens/BonnetjesScreen';
 
 const Tab = createBottomTabNavigator();
 
@@ -37,19 +37,19 @@ function CustomTabBar({ state, descriptors, navigation }) {
           );
         }
 
-        const isReceipts = route.name === 'Receipts';
+        const isBonnetjes = route.name === 'Bonnetjes';
 
         return (
           <TouchableOpacity key={route.key} onPress={onPress} style={styles.tab}>
             <View style={[styles.iconContainer, isFocused && styles.iconContainerActive]}>
-              {isReceipts ? (
+              {isBonnetjes ? (
                 <MaterialCommunityIcons name="receipt" size={22} color={isFocused ? '#4A7CF7' : '#999'} />
               ) : (
                 <Ionicons name="grid-outline" size={22} color={isFocused ? '#4A7CF7' : '#999'} />
               )}
             </View>
             <Text style={[styles.label, { color: isFocused ? '#4A7CF7' : '#999' }]}>
-              {isReceipts ? 'Receipts' : 'Dashboard'}
+              {isBonnetjes ? 'Bonnetjes' : 'Dashboard'}
             </Text>
           </TouchableOpacity>
         );
@@ -66,7 +66,7 @@ export default function TabNavigator() {
     >
       <Tab.Screen name="Dashboard" component={DashboardScreen} />
       <Tab.Screen name="Scan" component={ScanScreen} />
-      <Tab.Screen name="Receipts" component={ReceiptsScreen} />
+      <Tab.Screen name="Bonnetjes" component={BonnetjesScreen} />
     </Tab.Navigator>
   );
 }
