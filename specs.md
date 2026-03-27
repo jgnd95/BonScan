@@ -8,13 +8,15 @@
 ## Schermen & Flow
 
 ### 1. Header
-- Links boven logo (Bonentje met oranje background fill)
+- Links logo + naam, rechts settings button 
+-> Zie: design-screenshots/header.png
 
 ### 2. Navigation
 - Navigatie bestaat uit 3 knoppen
     - Dashboard
-    - "+"
+    - "Camera button" -> steek een beetje boven uit de navigatie
     - Bonnetjes
+-> Zie: design-screenshots/nav.png
 
 ### 1. 🔐 Auth Scherm 🔴
 - Email + wachtwoord login 🔴
@@ -59,6 +61,10 @@
 ---
 
 ## Fases
+1. ⬜ Skelet - Opzetten React Native Project
+2. ⬜ Toevoegen navigatie + header inclusief dashboard page (leeg) en receipts page (leeg).
+
+-- Nog te wijzigen:
 1. ⬜ Skelet — lege schermen + navigatie werkend
 2. ⬜ Auth — login / register
 3. ⬜ Supabase setup — tabellen + RLS + storage
@@ -69,4 +75,4 @@
 ---
 
 ## Huidige taak
-> Fase 1 — Skelet aanmaken, lege schermen + navigatie
+> Fase 1 — Skelet - Opzetten React Native Project
