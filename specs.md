@@ -61,7 +61,7 @@
 ---
 
 ## Fases
-1. ⬜ Skelet - Opzetten React Native Project
+1. ⬜ Skelet - Opzetten React Native Project 🟢 
 2. ⬜ Toevoegen navigatie + header inclusief (Zie schermen uitleg) + dashboard page (leeg) en receipts page (leeg).
 
 -- Nog te wijzigen:
